@@ -1,0 +1,64 @@
+.post-mailchimp {
+    margin: 20px 0;
+    padding: 20px 0 50px 0;
+    background-color: lighten(map-get($colors, light), 31);
+
+    .mailchimp-form {
+        @include clearfix();
+        position: relative;
+    }
+
+    .mailchimp-input {
+        float: left;
+    }
+
+    .mailchimp-subscribe {
+        position: absolute;
+        bottom: 0;
+        background: none;
+        outline: none;
+        border: none;
+        background-color: map-get($colors, primary);
+        padding: 14px 20px;
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+        transition: background-color .5s ease-in-out;
+    }
+
+    #mce-EMAIL:focus ~ .mailchimp-subscribe {
+        background-color: darken(map-get($colors, primary), 15);
+    }
+}
+
+#mce-EMAIL {
+    padding: 10px 0;
+    font-size: 15px;
+    border: none;
+    background: none;
+    outline: none !important;
+    -webkit-tap-highlight-color: none !important;
+    border-bottom: 3px solid map-get($colors, primary);
+    min-width: 400px;
+    transition: border-bottom-color .5s ease-in-out;
+
+    &:focus {
+        border-bottom-color: darken(map-get($colors, primary), 15);
+    }
+}
+
+// Increase the font size of the post's title on medium screen (only for single post view)
+@media #{$medium-and-down} {
+    #mce-EMAIL {
+        width: 100%;
+        min-width: normal;
+    }
+
+    .post-mailchimp {
+        .mailchimp-subscribe {
+            position: relative;
+            width: 100%;
+            margin-top: 6px;
+        }
+    }
+}

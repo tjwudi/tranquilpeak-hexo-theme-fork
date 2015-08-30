@@ -89,6 +89,9 @@
             <meta class="swiftype" name="image" data-type="enum" content="<%- url_for(page.permalink.replace('.html', '/') + photo) %>" />
         <% }) %>
     <% } %>
+    <% if (theme.wb_webmaster_code) { %>
+        <meta property="wb:webmaster" content="<%= theme.wb_webmaster_code %>" />
+    <% } %>
     <!--STYLES-->
     <%- css('assets/css/font-awesome.css') %>
     <%- css('assets/css/jquery.fancybox.css') %>
