@@ -39,7 +39,7 @@
     outline: none !important;
     -webkit-tap-highlight-color: none !important;
     border-bottom: 3px solid map-get($colors, primary);
-    min-width: 400px;
+    width: 400px;
     transition: border-bottom-color .5s ease-in-out;
 
     &:focus {
@@ -50,15 +50,16 @@
 // Increase the font size of the post's title on medium screen (only for single post view)
 @media #{$medium-and-down} {
     #mce-EMAIL {
+        display: block;
         width: 100%;
-        min-width: normal;
     }
 
     .post-mailchimp {
         .mailchimp-subscribe {
             position: relative;
-            width: 100%;
+            display: block;
             margin-top: 6px;
+            width: 100%;
         }
     }
 }
