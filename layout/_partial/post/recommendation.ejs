@@ -1,0 +1,14 @@
+<% if (post.prev || post.next) { %>
+    <div class="post-rmds main-content-wrap">
+        <h4>猜你想读</h4>
+        <ul>
+            <% if (post.prev) { %>
+                <li><a href="<%= post.prev.link %>"><%= post.prev.title %></a></li>
+            <% } %>
+            <% if (post.next) { %>
+                <li><a href="<%= post.next.link %>"><%= post.next.title %></a></li>
+            <% } %>
+        </ul>
+        
+    </div>
+<% } %>
