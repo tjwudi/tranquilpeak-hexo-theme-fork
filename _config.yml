@@ -163,7 +163,7 @@ swiftype_install_key:
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
 fb_app_id:
-# Weibo webmaster code
-wb_webmaster_code: 7ac6379013a2dc59
 # Mailchimp
 mailchimp_action_url: "//leapoahead.us8.list-manage.com/subscribe/post?u=f3a6e2f843ac1be03e00f7bed&amp;id=58e28559b1"
+# Jiathis
+jiathis_uid: 1399172634630776
