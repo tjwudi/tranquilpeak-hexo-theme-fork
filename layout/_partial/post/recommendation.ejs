@@ -3,10 +3,10 @@
         <h4>猜你想读</h4>
         <ul>
             <% if (post.prev) { %>
-                <li><a href="<%= post.prev.link %>"><%= post.prev.title %></a></li>
+                <li><a href="<%= post.prev.permalink %>"><%= post.prev.title %></a></li>
             <% } %>
             <% if (post.next) { %>
-                <li><a href="<%= post.next.link %>"><%= post.next.title %></a></li>
+                <li><a href="<%= post.next.permalink %>"><%= post.next.title %></a></li>
             <% } %>
         </ul>
         
