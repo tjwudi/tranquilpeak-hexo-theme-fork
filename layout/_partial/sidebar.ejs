@@ -1,14 +1,23 @@
 <nav id="sidebar" data-behavior="<%= sidebarBehavior %>">
+    <% // Show sidebar profile on non-post pages. `page.categories` only exists on post pages. %>
+    <div class="sidebar-profile">
+        <div class="avatar-wrap">
+            <a href="<%- url_for('/?action_from=sidebar-profile-picture') %>">
+                <img class="sidebar-profile-picture" src="<%- gravatar(theme.gravatar_email, 90) %>" alt="John Wu">
+            </a>
+        </div>
+        <%- markdown(__('author.job')) %>
+    </div>
     <% for (var i in theme.sidebar) { %>
         <ul class="sidebar-buttons">
         <% for (var n in theme.sidebar[i]) { %>
             <li class="sidebar-button">
                 <% if (url_for(theme.sidebar[i][n].url).indexOf(config.url) < 0 && url_for(theme.sidebar[i][n].url).indexOf(':') >= 0) { %>
-                    <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) %>" target="_blank">
+                  <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>" href="<%- url_for(theme.sidebar[i][n].url) + '?action_from=sidebar-button-link' %>" target="_blank">
                 <% } else { %>
                     <a  class="sidebar-button-link <% if (theme.sidebar[i][n].class) { %><%= theme.sidebar[i][n].class %><% } %>"
-                        <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %> href="<%- url_for(' ') %>"
-                        <% } else if (theme.sidebar[i][n].url.indexOf("/") === 0) { %> href="<%- url_for(theme.sidebar[i][n].url.substr(1)) %>"
+                        <% if (theme.sidebar[i][n].url.indexOf("/") === 0 && theme.sidebar[i][n].url.length === 1) { %> href="<%- url_for('/') + '?action_from=sidebar-button-link' %>"
+                        <% } else if (theme.sidebar[i][n].url.indexOf("/") === 0) { %> href="<%- url_for(theme.sidebar[i][n].url.substr(1)) + '?action_from=sidebar-button-link' %>"
                         <% } else { %> href="<%- url_for(theme.sidebar[i][n].url) %>"<% } %>
                     >
                 <% } %>
