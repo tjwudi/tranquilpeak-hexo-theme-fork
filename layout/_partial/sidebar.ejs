@@ -6,6 +6,7 @@
                 <img class="sidebar-profile-picture" src="<%- gravatar(theme.gravatar_email, 90) %>" alt="John Wu">
             </a>
         </div>
+        <p class="no-margin-bottom"><strong><%= config.author %></strong></p>
         <%- markdown(__('author.job')) %>
     </div>
     <% for (var i in theme.sidebar) { %>
